@@ -12,9 +12,19 @@ module.exports.ls = () => {
 
 
 module.exports.touch = () => {
-  // your code here
+  fs.writeFile('message.txt', 'Hello FROMMMM Node.js', 'utf8', (err) => {
+    if (err) throw err;
+    console.log('Success of touch')
+  });
 };
 
+
+
 module.exports.mkdir = () => {
-  // your code here
+  fs.mkdir('testDir',function(err){
+    if (err) {
+        return console.error(err);
+    }
+    console.log('Success of mkdir!');
+ });
 };
